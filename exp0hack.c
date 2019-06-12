@@ -75,6 +75,25 @@ int F() {
   return f; 
 }
 
+// G =  Number | '(' F ')'
+int G() {
+  int g;
+  char c = ch();
+  if (isdigit(c)) {
+    next(); // skip c
+    g = nextTemp();
+    genOp1(g, c);
+  } else if (c=='(') { // '(' F ')'
+    next();
+    g = F();
+    assert(ch()==')');
+    next();
+  } else {
+    error("G = (F) | Number fail!");
+  }
+  return g; 
+}
+
 // E = F ([+-] F)*
 int E() {
   int i1 = F();
