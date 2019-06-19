@@ -55,7 +55,7 @@ int F() {
 // E = F (op E)*
 int E() {
   int i1 = F();
-  while (isNext("+ - * / & | ! < > = == >= <=")) {
+  while (isNext("+ - * / & | ! < > =")) {  //詞彙解析器目前只支援1個字的運算
     char *op = next();
     int i2 = E();
     int i = nextTemp();
