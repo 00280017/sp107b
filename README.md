@@ -7,3 +7,5 @@
 教師 | 陳鍾誠
 學校 | 金門大學
 科系 | 資訊工程系
+
+gcc compiler.c lexer.c main.c -o fin
